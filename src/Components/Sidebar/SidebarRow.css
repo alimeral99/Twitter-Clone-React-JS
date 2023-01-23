@@ -1,0 +1,32 @@
+.sidebar__row {
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+  padding-left: 10px;
+  padding-right: 26px;
+  margin: 5px 80px;
+  width: fit-content;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.sidebar__row:hover {
+  background-color: #e7e7e8;
+  transition: all ease 0.5s;
+}
+
+.sidebar__rowIcon {
+  margin-right: 10px;
+}
+
+.sidebar__rowTitle {
+  color: black;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 925px) {
+  .sidebar__rowTitle {
+    display: none;
+  }
+}

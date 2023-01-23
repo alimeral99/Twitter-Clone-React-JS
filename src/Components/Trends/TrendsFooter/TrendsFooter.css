@@ -1,0 +1,29 @@
+.trendsfooter__popular {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+
+.trendsfooter__popular > .footer__info {
+  margin-right: 30px;
+}
+
+.trendsfooter__popular > .footer__info h3 {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.trendsfooter__popular > .footer__info h5 {
+  font-weight: 300;
+  font-size: small;
+  color: gray;
+}
+
+.trendsfooter__popular > button {
+  background-color: black;
+  color: #fff;
+  height: 30px;
+  padding: 0 15px;
+  border-radius: 25px;
+  cursor: pointer;
+}

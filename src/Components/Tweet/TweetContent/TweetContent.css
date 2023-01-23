@@ -1,0 +1,78 @@
+.tweet__content {
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+}
+
+.content__container {
+  flex: 1;
+}
+
+.content__input {
+  width: 35%;
+  height: 45px;
+  display: flex;
+}
+
+.content__input > input {
+  border: none;
+  flex: 1;
+  font-size: 18px;
+  padding: 15px;
+  outline: none;
+}
+
+.load__image {
+  height: 320px !important;
+  width: 100% !important;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 25px;
+}
+
+.content__headerBtn {
+  margin-top: 10px;
+  margin-left: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 25px;
+  color: #1a8cd8;
+  display: flex;
+  align-items: center;
+}
+
+.contentBtn__icon {
+  margin-right: 6px;
+}
+
+.content__btn:hover {
+  transition: all ease 0.5s;
+  background: #e8f5fd;
+}
+
+.content__footerButtons {
+  margin-top: 10px;
+  border-top: 1px solid lightgray;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__buttonsLeft > .MuiSvgIcon-root {
+  color: #1a8cd8;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.add__tweetButton {
+  background-color: #1a8cd8;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 17px;
+}

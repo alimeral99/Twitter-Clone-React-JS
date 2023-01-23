@@ -1,0 +1,22 @@
+.trend__content {
+  padding: 5px 15px;
+  margin: 15px 0;
+  text-transform: capitalize;
+  cursor: pointer;
+  width: 100%;
+}
+.trend__content:hover {
+  background-color: #eff1f1;
+}
+
+.trend__topic,
+.trend__number {
+  font-weight: 300;
+  font-size: 14px;
+  color: gray;
+}
+
+.trend {
+  font-weight: 500;
+  font-size: 15px;
+}

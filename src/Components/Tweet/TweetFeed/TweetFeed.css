@@ -1,0 +1,59 @@
+.tweetFeed {
+  padding: 15px;
+  margin-top: 5px;
+  display: flex;
+  cursor: pointer;
+  border-bottom: 1px solid lightgray;
+}
+
+.tweetFeed:hover {
+  background-color: #f7f7f7;
+  transition: ease ease 0.5s;
+}
+
+.feed__info {
+  margin-left: 10px;
+  width: 85%;
+}
+
+.feed__header {
+  display: flex;
+  align-items: center;
+}
+
+.feed__title {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  margin-right: 5px;
+}
+.feed__title > .MuiSvgIcon-root {
+  margin-left: 2px;
+  color: #1a8cd8;
+}
+
+.feed__username {
+  color: darkgray;
+}
+
+.feed__text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.feed__picture {
+  border-radius: 25px;
+  width: 100%;
+  object-fit: contain;
+  background-size: cover;
+  background-position: center;
+}
+
+.feed__footer {
+  margin-top: 15px;
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+}
