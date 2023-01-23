@@ -1,5 +1,5 @@
 
-# Netflix Clone ReactJS
+# Twitter Clone ReactJS
 
 [Project-Link](https://shimmering-pony-da16c3.netlify.app//)
 
