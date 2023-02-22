@@ -3,6 +3,7 @@
   margin-left: auto;
   width: 45%;
   border-right: 1px solid lightgray;
+  border-left: 1px solid lightgray;
 }
 
 .tweet__header {
