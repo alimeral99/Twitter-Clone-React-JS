@@ -20,7 +20,7 @@ function Tweet() {
     });
   }, []);
 
-  console.log(tweets, "aaa");
+
 
   return (
     <div className="tweet">
@@ -35,6 +35,8 @@ function Tweet() {
       <TweetContent changeTweet={setTweetChange} />
 
       <p className="count__tweet">Show 455. tweets</p>
+
+      console.log(tweets, "aaa1");
 
       {tweets.map(({ items }, id) => (
         <TweetFeed
