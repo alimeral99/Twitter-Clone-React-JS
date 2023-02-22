@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Tweet.css";
 import TweetFeed from "./TweetFeed/TweetFeed";
 
-import { query, orderBy, collection, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import db from "../../firebase/firebase";
 import TweetContent from "./TweetContent/TweetContent";
 
@@ -12,21 +12,14 @@ function Tweet() {
 
   useEffect(() => {
     async function getData() {
-      const tweetData = query(
-        collection(db, "items"),
-        orderBy("timestamp", "desc")
-      );
+      const querySnapshot = await getDocs(collection(db, "items"));
 
-      const getTweetData = await getDocs(tweetData);
       setTweets(
-        getTweetData.docs.map((doc) => ({
-          id: doc.id,
-          items: doc.data(),
-        }))
+        querySnapshot.forEach((doc) => {
+          doc.data();
+        })
       );
     }
-
-    getData();
   }, [tweetChange]);
 
   console.log(tweets, "aa");
