@@ -20,7 +20,7 @@ function Tweet() {
     });
   }, []);
 
-  console.log(tweets, "aa1");
+  console.log(tweets, "aaa");
 
   return (
     <div className="tweet">
