@@ -36,7 +36,7 @@ function Tweet() {
 
       <p className="count__tweet">Show 455. tweets</p>
 
-      console.log(tweets, "aaa1");
+      console.log(tweets, "aaaa1");
 
       {tweets.map(({ items }, id) => (
         <TweetFeed
