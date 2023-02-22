@@ -18,9 +18,9 @@ function Tweet() {
         }))
       );
     });
-  }, [tweetChange]);
+  }, []);
 
-  console.log(tweets, "aa");
+  console.log(tweets, "a2a");
 
   return (
     <div className="tweet">
