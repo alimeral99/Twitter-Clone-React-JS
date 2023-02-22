@@ -29,7 +29,7 @@ function Tweet() {
     getData();
   }, [tweetChange]);
 
-  console.log(tweets)
+  console.log(tweets, "aa");
 
   return (
     <div className="tweet">
