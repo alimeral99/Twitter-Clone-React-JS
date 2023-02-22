@@ -43,7 +43,7 @@ function Tweet() {
 
       <TweetContent changeTweet={setTweetChange} />
 
-      <p className="count__tweet">Show 455. tweets</p>
+      <p className="count__tweet">Show 455. tweets {items.items.name}</p>
 
       {tweets.map(({ items }, id) => (
         <TweetFeed
