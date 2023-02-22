@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Tweet.css";
 import TweetFeed from "./TweetFeed/TweetFeed";
 
-import { doc, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot } from "firebase/firestore";
 import db from "../../firebase/firebase";
 import TweetContent from "./TweetContent/TweetContent";
 
@@ -11,16 +11,13 @@ function Tweet() {
   const [tweetChange, setTweetChange] = useState(false);
 
   useEffect(() => {
-    const unsub = onSnapshot(
-      doc(db, "items", "timestamp", "desc"),
-      (snapshot) => {
-        setTweets(
-          snapshot.docs.map((doc) => ({
-            doc: doc.data(),
-          }))
-        );
-      }
-    );
+    const unsubscribe = onSnapshot(collection(db, "items"), (snapshot) => {
+      setTweets(
+        snapshot.docs.map((doc) => ({
+          items: doc.data(),
+        }))
+      );
+    });
   }, [tweetChange]);
 
   console.log(tweets, "aa");
