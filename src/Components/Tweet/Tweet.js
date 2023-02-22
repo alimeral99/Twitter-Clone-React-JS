@@ -29,6 +29,8 @@ function Tweet() {
     getData();
   }, [tweetChange]);
 
+  console.log(tweets)
+
   return (
     <div className="tweet">
       <div className="tweet__header">
