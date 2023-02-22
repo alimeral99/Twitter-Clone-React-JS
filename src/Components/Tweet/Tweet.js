@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Tweet.css";
 import TweetFeed from "./TweetFeed/TweetFeed";
 
-import { collection, getDocs } from "firebase/firestore";
+import { doc, onSnapshot } from "firebase/firestore";
 import db from "../../firebase/firebase";
 import TweetContent from "./TweetContent/TweetContent";
 
@@ -11,15 +11,16 @@ function Tweet() {
   const [tweetChange, setTweetChange] = useState(false);
 
   useEffect(() => {
-    async function getData() {
-      const querySnapshot = await getDocs(collection(db, "items"));
-
-      setTweets(
-        querySnapshot.forEach((doc) => {
-          doc.data();
-        })
-      );
-    }
+    const unsub = onSnapshot(
+      doc(db, "items", "timestamp", "desc"),
+      (snapshot) => {
+        setTweets(
+          snapshot.docs.map((doc) => ({
+            doc: doc.data(),
+          }))
+        );
+      }
+    );
   }, [tweetChange]);
 
   console.log(tweets, "aa");
