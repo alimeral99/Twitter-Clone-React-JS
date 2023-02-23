@@ -18,7 +18,7 @@ function Tweet() {
         }))
       );
     });
-  }, []);
+  }, [tweetChange]);
 
 
 
