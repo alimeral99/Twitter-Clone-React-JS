@@ -15,6 +15,7 @@ function Tweet() {
       setTweets(
         snapshot.docs.map((doc) => ({
           items: doc.data(),
+          id:doc.id,
         }))
       );
     });
