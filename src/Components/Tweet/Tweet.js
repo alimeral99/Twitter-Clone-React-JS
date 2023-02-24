@@ -11,17 +11,7 @@ function Tweet() {
   const [tweetChange, setTweetChange] = useState(false);
 
   useEffect(() => {
-  const q = query(collection(db, "items"), orderBy("timestamp",  "desc"));
-  const unsubscribe = onSnapshot(q, (querySnapshot) => {
-    
-    setTweets(
-     querySnapshot.docs.map((doc)=>((
-      {
-      items:doc.data(),
-      id:doc.id  
-      }
-    )))
-    )                                  
+             
   }, [tweetChange]);
 
 
