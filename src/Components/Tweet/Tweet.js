@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Tweet.css";
 import TweetFeed from "./TweetFeed/TweetFeed";
 
-import { collection, onSnapshot } from "firebase/firestore";
+import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
 import db from "../../firebase/firebase";
 import TweetContent from "./TweetContent/TweetContent";
 
@@ -11,14 +11,27 @@ function Tweet() {
   const [tweetChange, setTweetChange] = useState(false);
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(collection(db, "items"), (snapshot) => {
-      setTweets(
-        snapshot.docs.map((doc) => ({
-          items: doc.data(),
-          id:doc.id,
-        }))
-      );
-    });
+  const q = query(collection(db, "items"), orderBy("timestamp",  "desc"));
+  const unsubscribe = onSnapshot(q, (querySnapshot) => {
+    
+    setTweets(
+    querySnapshot.docs.map((doc)=>((
+      {
+      items:doc.data(),
+      id:doc.id  
+      }
+    )))
+    )
+  querySnapshot.forEach((doc) => {
+      cities.push(doc.data().name);
+  });
+  console.log("Current cities in CA: ", cities.join(", "));
+});
+
+});
+
+                                   
+                                  
   }, [tweetChange]);
 
 
