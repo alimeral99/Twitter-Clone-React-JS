@@ -15,7 +15,7 @@ function Tweet() {
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       setTweets(
-        querySnapshot.forEach((doc) => ({
+        querySnapshot.docs.map((doc) => ({
           items: doc.data(),
           id: doc.id,
         }))
