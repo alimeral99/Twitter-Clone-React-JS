@@ -13,14 +13,20 @@ function Tweet() {
   useEffect(() => {
     const q = query(collection(db, "items"), orderBy("timestamp", "desc"));
 
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+    async function getData() {
+      const tweetData = query(
+        collection(db, "items"),
+        orderBy("timestamp", "desc")
+      );
+
+      const getTweetData = await getDocs(tweetData);
       setTweets(
-        querySnapshot.docs.map((doc) => ({
-          items: doc.data(),
+        getTweetData.docs.map((doc) => ({
           id: doc.id,
+          items: doc.data(),
         }))
       );
-    });
+    }
   }, [tweetChange]);
 
   return (
