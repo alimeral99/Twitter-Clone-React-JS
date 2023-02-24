@@ -11,7 +11,24 @@ function Tweet() {
   const [tweetChange, setTweetChange] = useState(false);
 
   useEffect(() => {
-             
+
+    async function getTweet(){
+     const q = query(collection(db, "items"), orderBy("timestamp", "desc"));
+
+     const querySnapshot = await getTweet(q)
+     setTweets(querySnapshot.docs.map((doc) => (
+      {
+        items:doc.data(),
+        id:doc.id,
+      }
+     )));
+
+    };
+    
+    getTweet();
+    
+      
+
   }, [tweetChange]);
 
 
