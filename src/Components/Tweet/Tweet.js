@@ -11,27 +11,17 @@ function Tweet() {
   const [tweetChange, setTweetChange] = useState(false);
 
   useEffect(() => {
+    const q = query(collection(db, "items"), orderBy("timestamp", "desc"));
 
-    async function getTweet(){
-     const q = query(collection(db, "items"), orderBy("timestamp", "desc"));
-
-     const querySnapshot = await getTweet(q)
-     setTweets(querySnapshot.docs.map((doc) => (
-      {
-        items:doc.data(),
-        id:doc.id,
-      }
-     )));
-
-    };
-    
-    getTweet();
-    
-      
-
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      setTweets(
+        querySnapshot.forEach((doc) => ({
+          items: doc.data(),
+          id: doc.id,
+        }))
+      );
+    });
   }, [tweetChange]);
-
-
 
   return (
     <div className="tweet">
@@ -46,7 +36,6 @@ function Tweet() {
       <TweetContent changeTweet={setTweetChange} />
 
       <p className="count__tweet">Show 455. tweets</p>
-
 
       {tweets.map(({ items }, id) => (
         <TweetFeed
