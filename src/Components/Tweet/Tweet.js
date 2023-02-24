@@ -15,23 +15,13 @@ function Tweet() {
   const unsubscribe = onSnapshot(q, (querySnapshot) => {
     
     setTweets(
-    querySnapshot.docs.map((doc)=>((
+     querySnapshot.docs.map((doc)=>((
       {
       items:doc.data(),
       id:doc.id  
       }
     )))
-    )
-  querySnapshot.forEach((doc) => {
-      cities.push(doc.data().name);
-  });
-  console.log("Current cities in CA: ", cities.join(", "));
-});
-
-});
-
-                                   
-                                  
+    )                                  
   }, [tweetChange]);
 
 
