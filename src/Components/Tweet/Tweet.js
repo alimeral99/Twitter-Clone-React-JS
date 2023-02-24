@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Tweet.css";
 import TweetFeed from "./TweetFeed/TweetFeed";
 
-import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
+import { collection, query, orderBy } from "firebase/firestore";
 import db from "../../firebase/firebase";
 import TweetContent from "./TweetContent/TweetContent";
 
